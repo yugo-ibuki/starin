@@ -1,7 +1,7 @@
 {
   "name": "starin",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "src/Starin.tsx",
   "author": "yugo.ibuki",
   "type": "module",
