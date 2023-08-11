@@ -2,7 +2,10 @@
   "name": "starin",
   "private": false,
   "version": "0.0.0",
+  "main": "src/Starin.tsx",
+  "author": "yugo.ibuki",
   "type": "module",
+  "license": "ISC",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
