@@ -1,0 +1,68 @@
+/* global css */
+.stars-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-five {
+    border-right:  100px solid transparent;
+    border-bottom: 70px  solid gray;
+    border-left:   100px solid transparent;
+    margin: 0;
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    transform: rotate(35deg);
+}
+
+.star-five:before {
+    border-bottom: 80px solid gray;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+
+.star-five:after {
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid gray;
+    border-left: 100px solid transparent;
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: -105px;
+    width: 0;
+    height: 0;
+    transform: rotate(-70deg);
+    content: '';
+}
+
+.active {
+    border-bottom-color: yellow;
+}
+
+.active:before {
+    border-bottom-color: yellow;
+}
+
+.active:after {
+    border-bottom-color: yellow;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { ransform: rotate(360deg); }
+}
+
+.loading {
+    animation: spin 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
