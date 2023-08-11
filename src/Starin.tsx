@@ -17,6 +17,7 @@ type StarinProps = {
   size: Size
   count: number
   rating: number
+  onClick?: (selectedNum: number) => Promise<void>
   isLoading?: boolean
 }
 
@@ -24,6 +25,7 @@ const Starin = ({
   size = defaultProps.size,
   count = defaultProps.count,
   rating = defaultProps.rating,
+  onClick,
   isLoading = defaultProps.isLoading
 }: StarinProps) => {
   const [selectedNum, setSelectedNum] = useState<number>(rating)
@@ -44,14 +46,15 @@ const Starin = ({
               <div
                 key={i}
                 className={`
-                  'star-five',
-                  ${
-                    // coloring the stars before selectedNum
-                    selectedNum - 1 >= i ? 'active' : ''
-                  }
+                  ${'star-five'}
+                    ${
+                      // coloring the stars before selectedNum
+                      selectedNum - 1 >= i ? 'active' : ''
+                    }
                   `}
                 onClick={async () => {
                   setSelectedNum(i + 1)
+                  if (onClick) await onClick(i + 1)
                 }}
               />
             </StaringWrap>
